@@ -1,0 +1,7 @@
+/**
+ * Ksidedev - Gulp setup {{type}}
+ * Version {{version}}
+ *
+ * (c) 2016 Ksidedev
+ * Date: {{date}}
+ */

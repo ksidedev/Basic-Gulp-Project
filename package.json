@@ -1,0 +1,30 @@
+{
+  "name": "pick-your-own",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "commit": "git-cz",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.9.11",
+    "commitizen": "^2.5.0",
+    "cz-conventional-changelog": "^1.1.5",
+    "gulp": "^3.9.0",
+    "gulp-insert": "^0.5.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^2.0.4",
+    "gulp-uglify": "^1.4.2",
+    "gulp-watch": "^4.3.5"
+  },
+  "dependencies": {
+    "gsap": "^1.18.2"
+  },
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
+  }
+}

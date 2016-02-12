@@ -8,6 +8,7 @@ Use internal staging login details
 
 ```
 npm install
+npm install -g gulp
 
 ```
 

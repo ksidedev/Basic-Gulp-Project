@@ -14,4 +14,5 @@ npm install
 ## Dev
 
 Run `gulp` to start server and watch
-gulp build:dist
+
+Run `gulp build:dist` to build distribution files

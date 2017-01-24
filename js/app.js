@@ -1,1 +1,1 @@
-alert('Hello world');
+alert('js/app.js');

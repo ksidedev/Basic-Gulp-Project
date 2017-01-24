@@ -1,14 +1,14 @@
-var gulp 		= require('gulp');
-var uglify 		= require('gulp-uglify');
-var rename 		= require('gulp-rename');
+var gulp        = require('gulp');
+var uglify      = require('gulp-uglify');
+var rename      = require('gulp-rename');
 var replace     = require('gulp-replace');
 var insert      = require('gulp-insert');
-var watch 		= require('gulp-watch');
+var watch       = require('gulp-watch');
 var sass        = require('gulp-sass');
 var fs          = require('fs');
 var pkg         = require('./package');
 var browserSync = require('browser-sync').create();
-var reload		= browserSync.reload;
+var reload      = browserSync.reload;
 
 //
 // Util: returns today's date
@@ -38,10 +38,10 @@ gulp.task('sass', function() {
     doc = doc.replace('{{type}}', 'UI');
     return gulp.src('scss/*.scss')
         .pipe(sass({
-        	outputStyle: 'compressed'
+            outputStyle: 'compressed'
         }))
         .pipe(insert.prepend(doc))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist/css'));
 });
 
 //
@@ -49,10 +49,20 @@ gulp.task('sass', function() {
 //
 gulp.task('compress', function () {
     doc = doc.replace('{{type}}', 'UI');
-	return gulp.src('js/*.js')
-		.pipe(uglify())
+    return gulp.src('js/*.js')
+        .pipe(uglify())
         .pipe(insert.prepend(doc))
-		.pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('dist/js'))
+});
+
+//
+// Export html files
+//
+gulp.task('export', function () {
+    doc = doc.replace('{{type}}', 'UI');
+    return gulp.src('*.html')
+        .pipe(insert.prepend(doc))
+        .pipe(gulp.dest('dist'))
 });
 
 //
@@ -68,7 +78,7 @@ gulp.task('css-watch', ['sass']);
 //
 // Default
 //
-gulp.task('default', ['sass', 'compress'], function () {
+gulp.task('default', ['sass', 'compress','export'], function () {
 
     browserSync.init({
         server: {

@@ -3,8 +3,9 @@
 > This is a basic gulp and npm project
 
 Use internal staging login details
-
-## Install
+* Install [Node](https://nodejs.org/en/)
+*  Install [NPM](https://www.npmjs.com/get-npm)
+### Install NPM packages
 
 ```
 npm install
